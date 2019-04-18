@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	  <meta charset="UTF-8"/>
+	  <title>INI PAGE SAYAYAYAYAYA</title>
+	  <meta name="description" content="My first PWA"/>
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="css/materialize.min.css">
+	</head> 
+	<body>
+	<!-- Navigasi -->
+		<nav class="teal lighten-1" role="navigation">
+			<div class="nav-wrapper container">
+				<a href="#" class="brand-logo" id="logo-container">My App</a> 
+				<a href="#" class="sidenav-trigger" data-target="nav-mobile">☰</a>
+				<ul class="topnav right hide-on-med-and-down"></ul>
+				<ul class="sidenav" id="nav-mobile"></ul>
+			</div>
+		</nav>
+	<!-- Akhir Navigasi -->
+		<div class="container" id="body-content"></div>
+		<script src="js/materialize.min.js"></script>
+		<script src="js/nav.js"></script>
+		<script>
+		if (!('serviceWorker' in navigator)) {
+		console.log('Service worker not supported');
+		//return;
+		}
+		//pada kondisi diatas jika browser yang digunakan tidak supported
+		//untuk diinstall service worker maka akan diinformasikan
+		//pada change log bahwa browser tidak supported
+		
+		navigator.serviceWorker.register('rhesa-sw.js')
+		.then(function() {
+			console.log('Registered');
+		})
+		
+		//kemudian dilakukan register untuk file sevice worker dengan nama
+		//'rhesa-sw.js'. kemudia jika telah selesai reister maka pada 
+		//change log akan muncul informasi "registered"
+		.catch(function(error) {
+				console.log('Registration failed:', error);
+		});
+		//ketika register sebelumnya mengalami error, maka akan ditampilkan 
+		//informasi error yang terjadi pada registrasi dan info mengenai 
+		//pada bagian mana error yang terjadi;
+		
+		</script>
+	</body>
+</html> 
